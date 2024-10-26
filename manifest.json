@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "SaveSpot",
+  "version": "1.0",
+  "description": "Highlight and save text on any website.",
+  "permissions": ["activeTab", "storage", "contextMenus", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "pop-up.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}
